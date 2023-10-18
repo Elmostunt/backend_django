@@ -1,0 +1,74 @@
+{% extends 'albumes/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Bodega</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #f0f0f0; /* Color de fondo general */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px; /* Ancho máximo del contenido */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilos para las entradas de blog */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .blog-entry {
+            background-color: #fff; /* Color de fondo de las entradas */
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-entry a {
+            text-decoration: none;
+            color: #333; /* Color del enlace */
+            font-weight: bold;
+            font-size: 18px; /* Tamaño de fuente del enlace */
+        }
+
+        .blog-entry a:hover {
+            color: #2ecc71; /* Color del enlace al pasar el mouse */
+        }
+
+        /* Estilos para el mensaje "No hay entradas disponibles" */
+        p.no-entries {
+            font-style: italic;
+            color: #888; /* Color del mensaje */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
+        {% if latest_post_list %}
+            <ul>
+            {% for post in latest_post_list %}
+                <li class="blog-entry"> <!-- Agrega la clase "blog-entry" para aplicar estilos -->
+                    <h2><a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a></h2>
+                    <a href="{% url 'blog:detail' post.id %}">{{ post.content }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-entries">No albumes are available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+{% endblock %}

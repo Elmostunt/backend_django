@@ -1,0 +1,14 @@
+{% extends 'albumes/base.html' %}
+
+{% block content %}
+   <!--{{post}}--> 
+    <h1>{{ post.title }}</h1>
+    <ul>
+        <li>{{post.content}}</li>
+    </ul>
+    <ul>
+    {% for comment in post.content_set.all %}
+        <li>{{ comment.choice_text }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

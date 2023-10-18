@@ -1,0 +1,60 @@
+{% extends 'albumes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .image {
+            width: 30%; /* Distribuir en tres columnas (menos un poco para el espacio entre las imágenes) */
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <div class="image">
+            <img src="https://media.cnnchile.com/sites/2/2020/10/animaniacs-740x430.jpg" alt="Imagen 1">
+        </div>
+        <div class="image">
+            <img src="https://www.clacktv.cl/vtrcontent/media/2023/02/Pinky_y_Cerebro.webp" alt="Imagen 2">
+        </div>
+        <div class="image">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e2e98697-74a4-48ec-aeb5-2011ec796303/d2nvums-4936da7d-2120-4db3-8e76-1a0105647d59.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UyZTk4Njk3LTc0YTQtNDhlYy1hZWI1LTIwMTFlYzc5NjMwM1wvZDJudnVtcy00OTM2ZGE3ZC0yMTIwLTRkYjMtOGU3Ni0xYTAxMDU2NDdkNTkuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.AfMFqIbCrCicaDYcIHko2YGZbO5SRd8vMrfdkYLG1rc" alt="Imagen 2">
+        </div>
+        <!-- Repite este bloque para las otras 19 imágenes -->
+    </div>
+</body>
+</html>
+{% endblock %}
