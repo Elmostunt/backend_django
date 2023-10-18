@@ -14,6 +14,8 @@ urlpatterns = [
     path('crear_producto', views.create_product),
     path('crear_bodega', views.create_bodega),
     path('crear_movimiento', views.create_movimiento),
-    path('login', views.login_view, name="login"),    
+    path('login', views.login_view, name="login"),
+    path('logout', views.logout_view, name="logout"),
+    path('register', views.register_view, name="register"),   
     path('about',views.aboutus, name="acerca de")
 ]

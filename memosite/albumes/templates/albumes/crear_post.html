@@ -74,6 +74,7 @@
     </style>
 </head>
 <body>
+    {% if form %}
     <div class="crear-post-container">
         <div class="form-container">
             <h2 class="crear-post-heading">Crear Post</h2>
@@ -91,6 +92,13 @@
             </form>
         </div>
     </div>
+    {% else %}
+    <div class="crear-post-container">
+        <div class="form-container">
+            <h2 class="crear-post-heading">User Not Autenticated</h2>
+        </div>
+    </div>
+    {% endif %}
 </body>
 </html>
 {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'albumes/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            background-color: #2ecc71; /* Fondo verde */
+            font-family: Arial, sans-serif;
+        }
+        .form-reg-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 500px; /* Ancho ajustado para el formulario */
+          }
+  
+    </style>
+</head>
+<body>
+    <h1>Registro</h1>
+    <div class="form-reg-container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

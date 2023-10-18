@@ -74,6 +74,20 @@
         .navegation a:hover {
             background-color: #27ae60; /* Verde más oscuro al pasar el mouse */
         }
+        .logout-button {
+            background-color: #e74c3c; /* Rojo para el botón de cierre de sesión */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .logout-button:hover {
+            background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+        }
     </style>
     
 </head>
@@ -83,9 +97,14 @@
             <img src="{% static 'green_memo.png' %}" alt="Mi Logo">
         </div>
         <div class="header_login">
-            <a href="/albumes/login" class="login-button">Iniciar Sesión</a>
-            <a href="/albumes/register" class="login-button">Registrese</a>
-        </div>
+            {% if user_greeting %}
+                <p>{{ user_greeting }}</p>
+                <a href="/albumes/logout" class="logout-button">Cerrar Sesión</a>
+            {% else %}
+                <a href="/albumes/login" class="login-button">Iniciar Sesión</a>
+                <a href="/albumes/register" class="login-button">Registrarse</a>
+            {% endif %}
+        </div>   
     </div> 
     <nav>
         <div class="navegation">

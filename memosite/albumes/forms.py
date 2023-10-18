@@ -1,7 +1,7 @@
 from django import forms
-from .models import BlogPost, Movimiento, User, DetalleMovimiento,Bodega,Producto
-from django.contrib.auth.forms import UserCreationForm
-
+from .models import BlogPost, Movimiento, DetalleMovimiento,Bodega,Producto
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.models import User
 
 class BlogPostForm(forms.ModelForm):
     class Meta:
@@ -32,3 +32,16 @@ class BodegaForm(forms.ModelForm):
     class Meta:
         model = Bodega
         fields = '__all__'
+        
+class LoginForm(AuthenticationForm):
+    class Meta:
+        fields = '__all__'  # Puedes especificar los campos que desees incluir en el formulario
+
+
+
+
+
+class RegistrationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']

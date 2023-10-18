@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        <style>
             body {
                 background-color: #2ecc71; /* Fondo verde */
                 font-family: Arial, sans-serif;
@@ -76,23 +75,25 @@
     </style>
 </head>
 <body>
-    <div class="login-containter">
-        <div class="form-container">
-            <h2 class="login h">Login</h2>
-            <form method="post" class="login-form">
-                {% csrf_token %}
-                <div class="form-field">
-                    <label for="{{ form.title.id_for_label }}">username:</label>
-                    {{ form.username }}
-                </div>
-                <div class="form-field">
-                    <label for="{{ form.content.id_for_label }}">password:</label>
-                    {{ form.password }}
-                </div>
-                <button type="submit" class="crear-bodega-button">Guardar</button>
-            </form>
+
+        <div class="Login">
+            <div class="form-container">
+                <h2 class="crear-bodega-heading">Login</h2>
+                <form method="post" class="crear-bodega-form">
+                    {% csrf_token %}
+                    <div class="form-field">
+                        <label for="{{ form.username.id_for_label }}">Username:</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="form-field">
+                        <label for="{{ form.password.id_for_label }}">Password:</label>
+                        {{ form.password }}
+                    </div>
+                    <button type="submit" class="crear-bodega-button">Iniciar Sesión</button>
+                </form>
+            </div>
         </div>
-    </div>
+    
 </body>
 </html>
 {% endblock %}
