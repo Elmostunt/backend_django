@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>details</title>
+    <title>details_prods</title>
     <style>
         /* Estilos generales */
         body {
@@ -64,14 +64,9 @@
 <body>
     <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
 
-        <h1>{{ post.title }}</h1>
+        <h1>{{ prod.nombre }}</h1>
         <ul>
-            <li>{{post.content}}</li>
-        </ul>
-        <ul>
-        {% for comment in post.content_set.all %}
-            <li>{{ comment.choice_text }}</li>
-        {% endfor %}
+            <li>{{prod.descripcion}}</li>
         </ul>
     </div>
 </body>

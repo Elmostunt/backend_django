@@ -6,9 +6,12 @@ app_name = "blog"
 
 urlpatterns = [
     path("", views.index_albumes, name="index_albumes"),
-    
+    path("productos", views.index_prods, name="index_prods"),
+    path("movimientos", views.index_movs, name="index_movs"),
+
     # ex: /albumes/5/
     path("<int:post_id>/", views.detail, name="detail"),
+    path("productos/<int:producto_id>/", views.detail_prod, name="detail_prod"),
     path("imagenes",views.imagenes,name="imagenes"),
     path('crear_post', views.create_post),
     path('crear_producto', views.create_product),

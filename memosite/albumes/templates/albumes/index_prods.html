@@ -1,13 +1,11 @@
 {% extends 'albumes/base.html' %}
-
 {% block content %}
-   <!--{{post}}--> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>details</title>
+    <title>index_albumes</title>
     <style>
         /* Estilos generales */
         body {
@@ -21,11 +19,6 @@
             max-width: 800px; /* Ancho máximo del contenido */
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 500px; /* Ancho ajustado para el formulario */
-            margin-top: 20px;
         }
 
         /* Estilos para las entradas de blog */
@@ -62,18 +55,28 @@
     </style>
 </head>
 <body>
+    {% if user_greeting%}
     <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
-
-        <h1>{{ post.title }}</h1>
-        <ul>
-            <li>{{post.content}}</li>
-        </ul>
-        <ul>
-        {% for comment in post.content_set.all %}
-            <li>{{ comment.choice_text }}</li>
-        {% endfor %}
-        </ul>
+        {% if latest_prod_list %}
+            <ul>
+            {% for prod in latest_prod_list %}
+                <li class="blog-entry"> <!-- Agrega la clase "blog-entry" para aplicar estilos -->
+                    <h2><a href="{% url 'blog:detail_prod' prod.id %}">{{ prod.nombre }}</a></h2>
+                    <a href="{% url 'blog:detail_prod' prod.id %}">{{ prod.descripcion }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-entries">No albumes are available.</p>
+        {% endif %}
     </div>
+    {% else %}
+    <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
+        <h2>User Not Autenticated</h2>
+    </div>
+    {% endif %}
+
+
 </body>
 </html>
 {% endblock %}

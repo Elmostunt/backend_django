@@ -3,7 +3,7 @@ from django.template import loader
 from django.shortcuts import render,get_object_or_404 ,redirect
 from django.http import Http404
 from .forms import BlogPostForm, ProductoForm, BodegaForm, MovimientoForm, LoginForm
-from .models import BlogPost, User
+from .models import BlogPost, User, Producto, Movimiento
 from django.contrib.auth import authenticate, login, logout
 #from google.cloud import storage
 from .forms import RegistrationForm
@@ -103,6 +103,18 @@ def create_bodega(request):
         form = None
     return render(request, 'albumes/crear_bodega.html', {'form': form, 'user_greeting': user_greeting})
 
+def index_movs(request):
+    user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
+    latest_mov_list = None
+    if user_greeting:
+        latest_mov_list = Movimiento.objects.all
+    template = loader.get_template("albumes/index_movs.html")
+    context = {
+        "latest_mov_list": latest_mov_list,
+        "user_greeting": user_greeting, #Si user greeting is none desde front obligamos a generar la vista de los botones
+    }
+    return HttpResponse(template.render(context, request))
+
 def create_movimiento(request):
     user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
     if user_greeting:
@@ -162,6 +174,23 @@ def detail(request, post_id):
     user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
     post = get_object_or_404(BlogPost, pk=post_id)
     return render(request, "albumes/detail.html", {'post': post, 'user_greeting': user_greeting})
+
+def index_prods(request):
+    user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
+    latest_prod_list = None
+    if user_greeting:
+        latest_prod_list = Producto.objects.all
+    template = loader.get_template("albumes/index_prods.html")
+    context = {
+        "latest_prod_list": latest_prod_list,
+        "user_greeting": user_greeting, #Si user greeting is none desde front obligamos a generar la vista de los botones
+    }
+    return HttpResponse(template.render(context, request))
+
+def detail_prod(request, producto_id):
+    user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
+    prod = get_object_or_404(Producto, pk=producto_id)
+    return render(request, "albumes/detail_prods.html", {'prod': prod, 'user_greeting': user_greeting})
 
 
 
