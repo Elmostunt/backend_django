@@ -55,6 +55,7 @@
     </style>
 </head>
 <body>
+    {% if user_greeting%}
     <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
         {% if latest_post_list %}
             <ul>
@@ -69,6 +70,13 @@
             <p class="no-entries">No albumes are available.</p>
         {% endif %}
     </div>
+    {% else %}
+    <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
+        <h2>User Not Autenticated</h2>
+    </div>
+    {% endif %}
+
+
 </body>
 </html>
 {% endblock %}

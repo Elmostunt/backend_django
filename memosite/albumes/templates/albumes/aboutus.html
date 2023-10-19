@@ -75,9 +75,17 @@
 </head>
 <body>
     <div class="crear-bodega-container">
+        {% if user_greeting %}
         <div class="form-container">
-            <h2 class="crear-bodega-heading">About Us</h2>
+            <h2 class="crear-bodega-heading">About Us - Autenticated User</h2>
+            <p></p>
         </div>
+        {% else %}
+        <div class="form-container">
+            <h2 class="crear-bodega-heading">About Us - Not Autenticated User</h2>
+            <p></p>
+        </div>
+        {% endif %}
     </div>
 </body>
 </html>

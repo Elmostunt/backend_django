@@ -17,8 +17,9 @@ def is_user_auth_for_greeting(request):
 
 def index_albumes(request):
     user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
-    
-    latest_post_list = BlogPost.objects.order_by("-published_date")[:5]
+    latest_post_list = None
+    if user_greeting:
+        latest_post_list = BlogPost.objects.order_by("-published_date")[:5]  
     template = loader.get_template("albumes/index.html")
     context = {
         "latest_post_list": latest_post_list,
@@ -141,7 +142,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)  # Cierra la sesión del usuario
-    return redirect('blog:index_albumes')  # Redirige al usuario a la página deseada después de cerrar sesión
+    return redirect('blog:aboutus')  # Redirige al usuario a la página deseada después de cerrar sesión
 
 
 def register_view(request):
@@ -158,9 +159,9 @@ def register_view(request):
 
 
 def detail(request, post_id):
-    
+    user_greeting = is_user_auth_for_greeting(request)  # Variable para almacenar el saludo del usuario
     post = get_object_or_404(BlogPost, pk=post_id)
-    return render(request, "albumes/detail.html", {"post": post})
+    return render(request, "albumes/detail.html", {'post': post, 'user_greeting': user_greeting})
 
 
 

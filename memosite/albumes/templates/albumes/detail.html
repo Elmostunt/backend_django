@@ -2,13 +2,78 @@
 
 {% block content %}
    <!--{{post}}--> 
-    <h1>{{ post.title }}</h1>
-    <ul>
-        <li>{{post.content}}</li>
-    </ul>
-    <ul>
-    {% for comment in post.content_set.all %}
-        <li>{{ comment.choice_text }}</li>
-    {% endfor %}
-    </ul>
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_albumes</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #f0f0f0; /* Color de fondo general */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px; /* Ancho máximo del contenido */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 500px; /* Ancho ajustado para el formulario */
+            margin-top: 20px;
+        }
+
+        /* Estilos para las entradas de blog */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .blog-entry {
+            background-color: #fff; /* Color de fondo de las entradas */
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-entry a {
+            text-decoration: none;
+            color: #333; /* Color del enlace */
+            font-weight: bold;
+            font-size: 18px; /* Tamaño de fuente del enlace */
+        }
+
+        .blog-entry a:hover {
+            color: #2ecc71; /* Color del enlace al pasar el mouse */
+        }
+
+        /* Estilos para el mensaje "No hay entradas disponibles" */
+        p.no-entries {
+            font-style: italic;
+            color: #888; /* Color del mensaje */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- Agrega el contenedor para aplicar estilos -->
+
+        <h1>{{ post.title }}</h1>
+        <ul>
+            <li>{{post.content}}</li>
+        </ul>
+        <ul>
+        {% for comment in post.content_set.all %}
+            <li>{{ comment.choice_text }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
 {% endblock %}

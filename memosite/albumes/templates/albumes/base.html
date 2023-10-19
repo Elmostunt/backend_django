@@ -8,7 +8,10 @@
     <title>Mi Sitio</title>
     <style>
         body {
-            background-image: url('https://www.la-razon.com/wp-content/uploads/2023/08/20/23/JAURIA-PERROS-ARCHIVO-LA-RAZON.jpg');
+            background-image: url('https://media.istockphoto.com/id/1197037573/vector/pet-store-illustration.jpg?s=612x612&w=0&k=20&c=YS-q7g1H_t21ZtAsnD3LU29jyiyTaasKOVfdYCoUdKg=');
+            background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Fija la imagen de fondo en su lugar al desplazarse */
             margin: 0;
             padding: 0;
         }
@@ -107,6 +110,7 @@
         </div>   
     </div> 
     <nav>
+        {% if user_greeting %}
         <div class="navegation">
             <ul>
                <!--
@@ -137,6 +141,15 @@
                 </li>
             </ul>
         </div>
+        {% else %}
+        <div class="navegation">
+            <ul>
+                <li>
+                    <a href="/albumes/about">Acerca de</a>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
     </nav>
 {% block content %}
 {% endblock %}

@@ -43,6 +43,7 @@
     </style>
 </head>
 <body>
+    {% if user_greeting %}
     <div class="image-container">
         <div class="image">
             <img src="https://media.cnnchile.com/sites/2/2020/10/animaniacs-740x430.jpg" alt="Imagen 1">
@@ -55,6 +56,14 @@
         </div>
         <!-- Repite este bloque para las otras 19 imágenes -->
     </div>
+    {% else %}
+    <div class="image-container">
+        <h2>
+            User Not autenticated
+        </h2>
+        <!-- Repite este bloque para las otras 19 imágenes -->
+    </div>
+    {% endif %}
 </body>
 </html>
 {% endblock %}
