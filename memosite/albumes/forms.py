@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class BlogPostForm(forms.ModelForm):
     class Meta:
         model = BlogPost
-        fields = ['title', 'content', 'pets_related']  # Especifica los campos que deseas incluir en el formulario
+        fields = ['title', 'content']  # Especifica los campos que deseas incluir en el formulario
 
         
 class MovimientoForm(forms.ModelForm):
