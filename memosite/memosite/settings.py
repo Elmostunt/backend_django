@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bumth&=irtm(xd4=stsl1wh!+&k)h^15jglicrc=bxf83q@^!=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.91.101.238']
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
