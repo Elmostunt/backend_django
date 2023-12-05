@@ -16,4 +16,4 @@ RUN pip install mysqlclient
 COPY . .
 
 # Comando para ejecutar la aplicación cuando el contenedor se inicia
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8090"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8090", "--noreload"]
