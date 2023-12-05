@@ -5,8 +5,10 @@ FROM python:3.8
 WORKDIR /app
 
 # Copia el archivo requirements.txt y luego instala las dependencias
-RUN pip3 install pandas
 RUN pip install Django
+RUN pip djangorestframework
+RUN pip djangorestframework-simplejwt
+
 
 # Copia el resto de la aplicación al contenedor
 COPY . .
