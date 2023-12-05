@@ -10,6 +10,7 @@ RUN pip install djangorestframework
 RUN pip install djangorestframework-simplejwt
 RUN pip install markdown
 RUN pip install django-filter
+RUN pip install mysqlclient
 
 # Copia el resto de la aplicación al contenedor
 COPY . .
