@@ -6,9 +6,10 @@ WORKDIR /app
 
 # Copia el archivo requirements.txt y luego instala las dependencias
 RUN pip install Django
-RUN pip djangorestframework
-RUN pip djangorestframework-simplejwt
-
+RUN pip install djangorestframework
+RUN pip install djangorestframework-simplejwt
+RUN pip install markdown
+RUN pip install django-filter
 
 # Copia el resto de la aplicación al contenedor
 COPY . .
