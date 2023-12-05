@@ -81,14 +81,14 @@
             <form method="post" class="crear-post-form">
                 {% csrf_token %}
                 <div class="form-field">
-                    <label for="{{ form.title.id_for_label }}">Título:</label>
+                    <label for="{{ form.title.id_for_label }}"></label>
                     {{ form.title }}
                 </div>
                 <div class="form-field">
                     <label for="{{ form.content.id_for_label }}">Contenido:</label>
                     {{ form.content }}
                 </div>
-                <button type="submit" class="crear-post-button">Guardar</button>
+                <button type="submit    " class="crear-post-button">Guardar</button>
             </form>
         </div>
     </div>

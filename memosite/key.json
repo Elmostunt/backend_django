@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "memos-tablet",
+  "private_key_id": "5df9d8b2c76f535e1ebd7f845de5c8f0ea4fe503",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCGXQYHnwCKJP+0\nBdomUXP4G9mDwKApsOgG3lqr9cIbnwIwFmPCPO8XaCOGGHk62iOhJgcuYlKg9OS3\nO3c4ya3SzvhdGiuDr4Oy4AqA9bRDmDd9zkeX7xybtBK2wDrHuS5E58HiMf8yDIPg\nVZxVG0GcuPGlGaTouHoEwWgUtQ+kCtbQFIruDOKunLgHbDNwE5u6MEKRpPUhsBZw\nSaV7eaAKAJUW5JfQnJzJBblHZzS34r+gVN5M+hNZdMY+COPWem66fZoG8PVcFgTl\nbe50h35tInFBUHjh9JQRrHApqr8mrCHPv0TdUQIyC0CuFgmNu5IfThQq7uF1gWgX\nQOgudBuHAgMBAAECggEAPkmyiWbrG5+SULTj0B6zicHzYLI0LY+eyMxcsVohLafV\nnlBK19lip3G2AiynSqKkoMidzKF1F7vfqZfuKYvJQrCDD7oZkRcVER/ujqEY+7r9\ngptVsjf9hasBf+n2de9BZV0hEwjFesC1hBJ8AjI8BPjxwO119xLKMhks9GiJgyx9\nM8i8BNRPB5Wab2SscFhqzkeOytZjNJej2H/F0BtpMhSM3o0mwcrW3F47vgedz32h\nEW+hAmCC8lxUbYEh2ghnEjZyamr5anhKGiWlF32oy9D4tmohZCQImZ7nMsG04xdm\nRXBIXig/DZ4btQ6fWBRdMIZpcSEN7Dqhy6qhVJQUOQKBgQC83E8vr1Zv/+kjo0+i\nzFJv4PlEGTeQBLBm3pRqwz+G3+Yg29cbcu7zHg0EEX3sK2fIILt+KiK+yq0kP+wm\nuDIBVYffCeDn0UjCU60aZNcyqJOLJUoA0jUd2WauGyppxieSodRdZf2qCJa+v4O8\nk7jDnQc+YIKr3/JC560hJu+C3wKBgQC2IRITAbzzMOXB5HiL7eS+zs9EYzVseDFB\n71nt2CocfRlhTw967xelXmbqyltB24KO66nJNeR+VOO+irtovci+mciQpNZaEKVO\ng5Ug0HCLl5TJ3JX8PrQTdIuAyCog1UOrobjr9Byz+pzUCyzzkJBhjy9L/z4DKNks\nWqCSmH/kWQKBgGcND2hFlDSovt3jTqDWPGUvrNOrrtW2uUpoSTO4NgGySi/DxSwF\nGr0tuIxvvvYO+SIKOkQtWaghjzgoaQL3ntF7ihf5m+7iE4F1hw7P11yc/2T9g9PO\n34zaA10dFZeBuDYad3Y/IJqW9So/9fH/6OFT3Y/7uVFvcRFwuNdOF4KhAoGBAJBi\naUS+JQAabJqouFQeNTB7HV+W0rx6EHq3+HAQ5VmOZzd4iMopj3JfA3HxGCV+kuMg\nuooz+j+Ypq/gpa/kfKd1nMXml7Pw7EvxDqFj/UT810ysXg8J2pJt20Yt6Q/8YdhH\nriUIclTQQdHsRieVHJDrBVDXOV8h3AFIm3F8Ci+JAoGAIr0stpEJPY4BBPw+ubjq\neWoRGkLbd+4+3GtZKUGmoo/DKSOJruBaYTaU1NUruPABfkLosheop3otdEHpZWYh\nZIFHD4v2IpqUmWISR8ZsZB4tNSL/MVlrCgz7KLv3YJV0ShxivgyKMVaqCG3ScJyQ\n3BNXpUzMWnPRBFuFe881+DY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "tallersa@memos-tablet.iam.gserviceaccount.com",
+  "client_id": "105117488709016724696",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tallersa%40memos-tablet.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
