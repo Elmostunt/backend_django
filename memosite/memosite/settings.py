@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bumth&=irtm(xd4=stsl1wh!+&k)h^15jglicrc=bxf83q@^!=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.91.101.238','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['54.91.101.238','127.0.0.1','localhost','54.160.255.76']#cloud_server , localhost_ip, localhost, cloud_docker_server
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
