@@ -1,6 +1,9 @@
 # Usa una imagen base de Python
 FROM python:3.8
 
+ENV PYTHONUNBUFFERED=1
+
+
 # Establece el directorio de trabajo
 WORKDIR /app
 
@@ -14,6 +17,5 @@ RUN pip install mysqlclient
 
 # Copia el resto de la aplicación al contenedor
 COPY . .
-
 # Comando para ejecutar la aplicación cuando el contenedor se inicia
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8090", "--noreload"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
