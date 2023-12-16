@@ -1,0 +1,80 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+        color: #333; /* Color de texto negro */
+    }
+
+    .container-new-reservation {
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        width: 50%;
+    }
+
+    h1 {
+        color: #0066cc; /* Color de título */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s; /* Agregado efecto de transición al color de fondo y texto */
+    }
+
+    button:hover {
+        background-color: #45a049;
+        color: #fff; /* Cambia el color de texto al pasar el mouse sobre el botón */
+    }
+</style>
+
+<div class="container-new-reservation">
+    <h1>Crear una nueva reserva</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="{{ form.title.id_for_label }}">Fecha y hora:</label>
+        {{ form.title }}
+        <br>
+        <label for="{{ form.description.id_for_label }}">Datos personales:</label>
+        {{ form.description }}
+        <br>
+        <label for="{{ form.project.id_for_label }}">Encargado:</label>
+        {{ form.project }}
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: #f4f4f4; /* Color de fondo general */
+    }
+
+    .container-tasks {
+        background-color: #ffffff; /* Color de fondo del contenedor de tareas */
+        border-radius: 15px; /* Borde redondeado */
+        padding: 20px; /* Espaciado interno */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+
+    .card {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: box-shadow 0.3s, transform 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transform: scale(1.02);
+    }
+
+    .card-title a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.25rem;
+        transition: color 0.3s;
+    }
+
+    .card-title a:hover {
+        color: #0066cc;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+</style>
+
+<div class="container mt-5 container-tasks">
+    <h1 class="display-4 text-center mb-4" style="color: #000000; text-align: center;">Lista de Encargados</h1>
+
+    <div class="d-flex flex-wrap">
+        {% for project in projects %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <a href="{% url 'project_detail' project.id %}" class="text-decoration-none">
+                            {{ project.name }}
+                        </a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

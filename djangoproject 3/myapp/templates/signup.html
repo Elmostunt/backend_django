@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+  <div style="max-width: 400px; margin: auto; text-align: center;">
+    <h2 style="color: #333; margin-bottom: 20px;">Registrarse</h2>
+    <form method="post" action="{% url 'signup' %}" style="background-color: #3498db; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      {% csrf_token %}
+      {{ form.username.label_tag }}
+      {{ form.username }}
+      <div style="margin-bottom: 15px;"></div>
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+      <div style="margin-bottom: 15px;"></div>
+      {{ form.password2.label_tag }}
+      {{ form.password2 }}
+      <div style="margin-bottom: 15px;"></div>
+      <button type="submit" style="background-color: #26a69a; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Registrarse</button>
+    </form>
+  </div>
+{% endblock %}

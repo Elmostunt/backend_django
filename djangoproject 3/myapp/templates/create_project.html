@@ -1,0 +1,91 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+        color: #333; /* Color de texto negro */
+    }
+
+    .container-create-project {
+        background-color: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        width: 50%;
+    }
+
+    h1 {
+        color: #0066cc;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .text-addon {
+        margin-top: 5px;
+        color: #666;
+        font-size: 0.8rem;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+        color: #fff;
+    }
+</style>
+
+<div class="container-create-project">
+    <h1>Agregar un encargado</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="{{ form.name.id_for_label }}">Nombre:</label>
+        {{ form.name }}
+        <br>
+        <!-- Elimina el bloque de correo electrónico y rol del formulario -->
+        
+        <!-- Nuevos campos para correo electrónico y rol -->
+        <label for="id_email">Correo electrónico:</label>
+        <input type="email" name="email" id="id_email" required>
+        <br>
+        <label for="id_role">Rol:</label>
+        <input type="text" name="role" id="id_role" required>
+        <br>
+        <!-- Fin de los nuevos campos -->
+        
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+
+{% endblock %}

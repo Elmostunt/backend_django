@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'tu_aplicacion/main.css' %}">
+
+  <!-- Tu contenido HTML aquí -->
+  <div class="container" style="color: #333; text-align: center; padding: 40px;">
+    <h1 style="font-size: 2.5em; color: #00897b; /* Verde oscuro */">¡Bienvenido a INCclinic!</h1>
+    <h3 style="font-size: 1.5em; color: #26a69a; /* Verde más claro */">Somos un equipo comprometido con la región, que entrega atención de salud cercana, dedicada y humana</h3>
+    <img src="{% static 'profesionales.png' %}" alt="profesionales" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; margin-top: 20px;">
+    <p style="font-size: 1.2em; line-height: 1.6; color: #555; margin-top: 20px;">
+      En Clínica INCclinic, nos complace ofrecerle la posibilidad de solicitar citas médicas de manera fácil y rápida a través de nuestra página web. Nuestro equipo altamente capacitado está listo para atenderle y proporcionarle la atención personalizada que merece. Descubra la conveniencia de reservar su cita desde la comodidad de su hogar y dé el primer paso hacia una vida más saludable con nosotros. ¡Estamos aquí para cuidar de usted!
+    </p>
+  </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .text-container {
+            flex: 1;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #3498db;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .image-container {
+            flex-basis: 50%;
+            overflow: hidden;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            object-fit: cover;
+        }
+    </style>
+
+    <div class="content-container">
+        <div class="text-container">
+            <h1>¿Quiénes somos?</h1>
+            <p>Bienvenido/a a nuestra clínica dedicada a proporcionar atención médica de calidad y centrada en el paciente. En nuestro compromiso con su bienestar, hemos creado un espacio virtual que refleja nuestro enfoque moderno y accesible para la salud. En nuestra página, puede reservar cómodamente sus citas médicas, garantizando un proceso eficiente y conveniente. Nuestro equipo de profesionales altamente capacitados se dedica a brindarle el mejor cuidado posible, utilizando tecnología de vanguardia para ofrecer servicios médicos integrales. Nos enorgullece ofrecer un entorno acogedor y amigable para nuestros pacientes, donde la salud y la comodidad van de la mano. Confíe en nosotros para cuidar de usted y su familia. ¡Bienvenido/a a una nueva era en el cuidado de la salud!</p>
+        </div>
+        <div class="image-container">
+            <img src="https://www.epicentrochile.com/wp-content/uploads/2019/11/clinica2-600x404.jpg" alt="Clínica">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+body {
+  background: #202020;
+  color: whitesmoke;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-login {
+  background-color: #26a69a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* main.css */
+.black-text {
+  color: black;
+}
+
+/* Si es necesario, ajusta el color para el fondo del formulario */
+.login-form {
+  color: black;
+}
